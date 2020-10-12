@@ -20,7 +20,13 @@
  * @returns {number[]} A sorted copy of the source array.
  */
 export function immutableSort (source) {
-  // TODO: Write your code here.
+  if (!Array.isArray(source)) {
+    throw new TypeError('Hey! The source paramater must be an Array.')
+  }
+  const arrayCopy = Array.from(source)
+  arrayCopy.sort((a, b) => a - b)
+
+  return arrayCopy
 }
 
 /**
@@ -31,5 +37,11 @@ export function immutableSort (source) {
  * @returns {number[]} A sorted copy (descending order) of the source array.
  */
 export function immutableSortDescending (source) {
-  // TODO: Write your code here.
+  if (!Array.isArray(source)) {
+    throw new TypeError('Hey! The source paramater must be an Array.')
+  }
+  const arrayCopy = Array.from(source)
+  arrayCopy.sort((a, b) => b - a)
+
+  return arrayCopy
 }
